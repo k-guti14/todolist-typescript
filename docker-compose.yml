@@ -1,12 +1,13 @@
 version: '3.8'
 
 services:
-  app:
-    image: node:18
-    container_name: my-react-app
-    working_dir: /app/my-app
-    volumes:
-      - ./:/app
-      - /app/node_modules
-    ports:
-      - '3000:3000'
+ node:
+   build: .
+   environment:
+     - NODE_ENV=development
+   volumes:
+     - ./:/usr/src/app
+   command: sh -c 'cd my-app && yarn start'
+   ports:
+     - '3000:3000'
+   tty: true3
