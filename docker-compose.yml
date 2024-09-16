@@ -10,4 +10,4 @@ services:
    command: sh -c 'cd my-app && yarn start'
    ports:
      - '3000:3000'
-   tty: true3
+   tty: true
